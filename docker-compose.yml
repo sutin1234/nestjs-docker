@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  nestjs:
+    container_name: nestjs-backend
+    build: .
+    hostname: localhost
+    ports:
+      - 3000:3000
+    volumes:
+      ## Enabled on development mode
+      - ./nest:/app
+      ## Enabled on production mode
+      # - ./nest/dist:/app/dist:rw
